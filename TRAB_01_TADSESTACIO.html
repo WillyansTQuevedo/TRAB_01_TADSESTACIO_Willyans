@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript" src="script.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cadastro de Clientes</title>
+
+</head>
+
+<body onload="document.cadastro.cpf.focus()" onload="document.cadastro.sim.checked=false; showhidefield()">
+	
+		<form name="cadastro">
+			<table border = 1>
+				<tr>
+					<td colspan = "2" align = center >Cadastro de Clientes</td>
+				</tr>	
+				<tr>
+					<td>CPF:</td><td><input type = "text"  name = "cpf" size = "14" maxlength = "14" 
+					onBlur="verificarCPF(cadastro.cpf.value)"><span class="style1" style="color:red">*</span>
+					</td>				
+				</tr>
+				<tr>
+					<td>Nome:</td><td><input type = "text"  name = "nome" size = "80" maxlength = "80" 
+					onBlur ="validaNome(cadastro.nome.value)"><span class="style1" style="color:red">* Campo Obrigatório</span>
+					</td>
+				</tr> 
+				<tr>
+					<td>Endereço:</td><td><input type = "text"  name = "endereco" size = "80" maxlength = "80" 			
+					onBlur = "validaCampos(cadastro.endereco.value)"></td></tr>
+				<tr>
+					<td>Cidade:</td><td><input type = "text"  name = "cidade" size = 50 maxlength = 50>
+					<span class="style1" style="color:red">* Campo Obrigatório</span>
+					</td>
+				</tr>
+				<tr>
+					<td>Sexo:</td><td><select name="sexo" id="sexo" onBlur="validaSelect(cadastro.sexo.value)"><option>--Escolher Sexo--</option>
+										                 <option>Masculino</option>
+									     	             <option>Feminino</option></select><span class="style1" style="color:red">*</span>
+					</td>
+				</tr>
+				<tr>
+					<td>Telefone:</td><td><input type = "text"  name = "telefone" size = 15 maxlength = 15></td></tr>
+						<tr><td>E-mail(Login):</td><td><input type = "text"  name = "email" onBlur="validaEmail()" size = "40" maxlength = "40" >
+						<span class="style1" style="color:red">*</span>
+					</td>
+				</tr>
+				<tr>
+					<td>Senha:</td><td><input type = "password" name = "senha"><span class="style1" style="color:red">*</span></td>
+					</td>
+				</tr>
+				<tr>
+					<td>Receber Promoções:</td><td><input type = "checkbox" name = "sim" VALUE="sim" onclick="validaChekBox()"> Sim 
+										   <input type = "checkbox" name = "nao" VALUE="nao" onclick="validaChekBox()"> Não 
+										   <span name="msgPromo" id="msgPromo" class="style1" style="color:red"> A qualquer momento você poderá cancelar o recebimento
+											dos e-mail's de promação enviando um e-mail com o assunto STOP EMAIL para o endereço Contato@estacio.br.</span>
+												
+					</td>
+				</tr>
+				<tr>
+					<td>Obs:</td><td><TEXTAREA NAME="obs"  ROWS=6 COLS=100></TEXTAREA></td></tr> 
+					<tr><td></td><td><input type = "submit"  name = "enviar" value = "Enviar"> 
+									 <input type = "submit"  name = "valores" value = "Valores">
+					</td>
+				</tr>
+			
+			</table>
+		</form>
+</html>
